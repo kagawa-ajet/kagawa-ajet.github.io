@@ -1,3 +1,9 @@
+<div align="center">
+  <a href="https://kagawa-ajet.github.io">
+    <img width="300" height="300" src="public/icons/udon-henro-512.png">
+  </a>
+</div>
+
 # Kagawa AJET
 
 This is a website for everyone, to learn about events, and other things going on
@@ -18,4 +24,4 @@ In an attempt to clear unused clutter from the page, we have decided to replace
 it with this page - just a calendar, with links to elsewhere should the user
 need other information.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+*This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).*
