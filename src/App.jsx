@@ -1,18 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useEvents } from './calendar-api'
 import './App.scss'
 
+function Event (props) {
+  const { summary, description, location } = props
+  console.log(props)
+  return (
+    <div className='Event'>
+      <h2 className='summary'>{ summary }</h2>
+      <p className='description'>{ description }</p>
+      <p className='location'>{ location }</p>
+    </div>
+  )
+}
+
 export default function App () {
+  const events = useEvents(
+    'gprr6e1so5bm32gjig3vf5ehk8@group.calendar.google.com',
+    'AIzaSyAT6OXBzAOkHsAjt61M-MmQESV_DJOXeLs'
+  )
+
   return (
     <div className='App'>
-      <h1>Welcome to Kagawa AJET</h1>
-      <p>
-        This is a static page. The first in a long line!
-      </p>
-      <p>
-        We decided that we didnt need the extra information; you can get it a
-        LOT of other places. This page should just be about events going on and
-        around Kagawa.
-      </p>
+      {events.map(event => <Event key={event.id} {...event} />)}
     </div>
   )
 }
