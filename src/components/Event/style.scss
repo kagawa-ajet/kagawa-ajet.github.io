@@ -1,0 +1,13 @@
+.Event {
+  display: flex;
+  flex-direction: column;
+
+  &:not(:first-child)::before {
+    align-self: center;
+    content: '';
+    width: 70%;
+    box-sizing: margin-box;
+    border-top: 1px solid black;
+    margin: 2rem 0;
+  }
+}
