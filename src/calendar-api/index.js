@@ -25,3 +25,13 @@ export function useEvents (calendarId, apiKey) {
 
   return events
 }
+
+export function useCalendar (calendarId, apiKey) {
+  const [calendar, setCalendar] = useState()
+
+  useEffect(() => {
+    setCalendar(new Calendar(calendarId, apiKey))
+  }, [calendarId, apiKey])
+
+  return calendar
+}
