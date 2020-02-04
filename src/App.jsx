@@ -1,18 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useEvents } from './calendar-api'
+import Event from './components/Event'
 import './App.scss'
-
-function Event (props) {
-  const { summary, description, location } = props
-  console.log(props)
-  return (
-    <div className='Event'>
-      <h2 className='summary'>{ summary }</h2>
-      <p className='description'>{ description }</p>
-      <p className='location'>{ location }</p>
-    </div>
-  )
-}
 
 export default function App () {
   const events = useEvents(
@@ -22,7 +11,7 @@ export default function App () {
 
   return (
     <div className='App'>
-      {events.map(event => <Event key={event.id} {...event} />)}
+      {events && events.map(event => <Event key={event.id} {...event} />)}
     </div>
   )
 }
