@@ -29,6 +29,13 @@ export default class Calendar {
     })
   }
 
+  getNext () {
+    return this._fetch({
+      timeMin: new Date().toISOString(),
+      limit: 1
+    })
+  }
+
   _urlWithQuery (query = {}) {
     const queryString = Object.entries(query)
       .map(([key, value]) => `&${key}=${value}`)
